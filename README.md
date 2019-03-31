@@ -1,1 +1,1 @@
-# bpanalyzer 1
+# bpanalyzer 10
