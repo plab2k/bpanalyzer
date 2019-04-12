@@ -10,7 +10,7 @@
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
       navigator.serviceWorker
-        .register("sw.js", { scope: "/" })
+        .register("/js/sw.js", { scope: "/" })
         .then(registration => {
           registration.pushManager.getSubscription().then(function(sub) {
             if (sub === null) {
