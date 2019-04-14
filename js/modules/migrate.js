@@ -1,11 +1,11 @@
 ;
 var app = app || {};
-app.firebase = (function() {
+app.migrate = (function() {
     "use strict";
 
     return {
         init: function(callback) {
-            if (!app.config.firebase1) {
+            if (!app.config.migrate) {
                 console.error("app/conf/firebase.js not loaded");
                 return;
             }

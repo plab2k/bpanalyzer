@@ -15,7 +15,10 @@
     }
 
     $(document).ready(function() {
-        //app.firebase.init(() => {});
+        //app.migrate.init(() => {});
+        $($("#export").html()).wgmigrate().appendTo($("main"))
+
+        //$("main").append($("#export").html());
 
     });
 })();

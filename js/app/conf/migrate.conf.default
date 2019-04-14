@@ -1,5 +1,5 @@
 ;
-app.config.firebase = {
+app.config.migrate = {
     "apiKey": "",
     "authDomain": "",
     "databaseURL": "",

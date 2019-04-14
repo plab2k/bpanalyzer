@@ -1,6 +1,6 @@
 ;
 var app = app || { config: {} };
-app.config.firebase = {
+app.config.migrate = {
     "apiKey": "AIzaSyCbb8jTiag_He6CYa1w1iflMLrOR2yYHlk",
     "authDomain": "bpanalyzer-db.firebaseapp.com",
     "databaseURL": "https://bpanalyzer-db.firebaseio.com",
