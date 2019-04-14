@@ -1,3 +1,4 @@
 js/vendor/**/.git
 .vscode
 node_modules
+app/conf/*.js
