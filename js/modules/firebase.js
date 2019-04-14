@@ -5,6 +5,10 @@ app.firebase = (function() {
 
     return {
         init: function(callback) {
+            if (!app.config.firebase1) {
+                console.error("app/conf/firebase.js not loaded");
+                return;
+            }
             app.helper.getScript("https://www.gstatic.com/firebasejs/live/3.0/firebase.js", () => {
                 firebase.initializeApp(app.config.firebase);
 
