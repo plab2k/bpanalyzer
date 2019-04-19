@@ -1,24 +1,32 @@
 //Controller
-;
 (function() {
+  "use strict";
+  const showMigrate = function() {
+    //$($("#export").html())
+    /*    $($("#export").html())
+      .wgmigrate()
+      .appendTo("main"); */
+    $(
+      $($("#export").html())
+        .appendTo("main")
+        .wrapAll("<div>")
+    );
+  };
+  const registerSW = function() {
     if ("serviceWorker" in navigator) {
-        window.addEventListener("load", () => {
-            navigator.serviceWorker
-                .register("/js/sw.js", { scope: "/" })
-                .then(registration => {
-                    app.serviceWorker = registration;
-                })
-                .catch(err => {
-                    console.error("Registration failed:", err);
-                });
+      navigator.serviceWorker
+        .register("/js/sw.js", { scope: "/" })
+        .then(registration => {
+          app.serviceWorker = registration;
+        })
+        .catch(err => {
+          console.error("Registration failed:", err);
         });
     }
+  };
 
-    $(document).ready(function() {
-        //app.migrate.init(() => {});
-        $($("#export").html()).wgmigrate().appendTo($("main"))
-
-        //$("main").append($("#export").html());
-
-    });
+  $(document).ready(function() {
+    registerSW();
+    showMigrate();
+  });
 })();
