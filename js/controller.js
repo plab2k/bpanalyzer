@@ -2,15 +2,10 @@
 (function() {
   "use strict";
   const showMigrate = function() {
-    //$($("#export").html())
-    /*    $($("#export").html())
+    app.helper
+      .getTemplate("#wgmigrate")
       .wgmigrate()
-      .appendTo("main"); */
-    $(
-      $($("#export").html())
-        .appendTo("main")
-        .wrapAll("<div>")
-    );
+      .appendTo("main");
   };
   const registerSW = function() {
     if ("serviceWorker" in navigator) {

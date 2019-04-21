@@ -1,0 +1,8 @@
+a:not([href]) {
+  cursor: pointer;
+  border-bottom: dotted 1px;
+}
+a:not([href]):hover {
+  border-color: blue;
+  color: blue;
+}
