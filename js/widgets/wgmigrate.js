@@ -1,17 +1,24 @@
-;
 $.widget("ns.wgmigrate", {
+  // Default options.
+  options: {
+    param1: "foo",
+    param2: "bar",
+    param3: "baz"
+  },
 
-    // Default options.
-    options: {
-        param1: "foo",
-        param2: "bar",
-        param3: "baz"
-    },
+  _create: function() {
+    this.element.wrapAll("div").addClass("wgmigrate");
+    app.migrate.init(() => {
+      app.migrate.checkSubscribtion(this._updateSubscription);
+    });
 
-    _create: function() {
-        // Options are already merged and stored in this.options
-        // Plugin logic goes here.
-        console.log("create")
+    console.log("create");
+  },
+  _updateSubscription(sub) {
+    if (sub) {
+      //has Subscription
+    } else {
+      //not Subscribed
     }
-
+  }
 });
