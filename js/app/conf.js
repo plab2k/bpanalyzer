@@ -1,3 +1,5 @@
 ;
 var app = app || {};
-app.config = {};
+app.config = {
+    createDB: false
+};

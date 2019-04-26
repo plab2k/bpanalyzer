@@ -18,34 +18,59 @@
   <link rel="help" title="FAQ" href="/help/" />
   <link rel="manifest" href="/manifest.json" />
   <link rel="stylesheet" type="text/css" href="/css/common.css" />
+  <link rel="stylesheet" type="text/css" href="/css/loader.css" />
   <link rel="stylesheet" type="text/css" href="/css/widgets.css" />
   <title>BP Analyzer</title>
 </head>
 
 <body>
+  <noscript>JavaScript is required. Enable Javascript in the browser settings.</noscript>
+  <div class="lds-ellipsis" id="loader">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
   <main>
-    <noscript>JavaScript is required. Enable Javascript in the browser settings.</noscript>
   </main>
-
   <template id="wgmigrate">
     <div>
       <div class="unsubscribed">
         <span data-text="Unsubscribed"></span> <a data-text="subscribe"></a>
       </div>
-      <div class="subscribed"><span data-text="Subscribed"></span></div>
+      <div class="subscribed">
+        <span data-text="Subscribed"></span> <a data-text="unsubscribe"></a>
+      </div>
     </div>
   </template>
-
-  <script src="/js/vendor/jquery/3.4.0/jquery-3.4.0.js"></script>
+  <template id="wgexport">
+    <div>
+      <a data-text="Download"></a>
+    </div>
+  </template>
+  <template id="wgimport">
+    <div>
+      <label for="inportfile" data-text="Select file"></label>
+      <input type="file" id="inportfile">
+    </div>
+  </template>
+  <script src="/js/vendor/jquery/3.4.0/jquery-3.4.0.js">
+  </script>
   <script src="/js/vendor/jquery-ui/1.12.1/jquery-ui.min.js"></script>
   <script src="/js/app/app.js"></script>
+  <script src="/js/app/control.js"></script>
   <script src="/js/app/conf.js"></script>
+  <script src="/js/app/db.js"></script>
   <script src="/js/app/conf/migrate.conf.js"></script>
   <script src="/js/common/helper.js"></script>
-  <script src="/js/modules/migrate.js"></script>
   <script src="/js/controller.js"></script>
   <script src="/js/widgets/wgbase.js"></script>
-  <script src="/js/widgets/wgmigrate.js"></script>
+  <script src="/js/widgets/migrate/migrate.js"></script>
+  <script src="/js/widgets/migrate/wgmigrate.js"></script>
+  <script src="/js/widgets/export/export.js"></script>
+  <script src="/js/widgets/export/wgexport.js"></script>
+  <script src="/js/widgets/import/import.js"></script>
+  <script src="/js/widgets/import/wgimport.js"></script>
 </body>
 
 </html>

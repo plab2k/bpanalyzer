@@ -1,13 +1,25 @@
 //Controller
-(function() {
+(function () {
   "use strict";
-  const showMigrate = function() {
+  const showMigrate = function () {
     app.helper
       .getTemplate("#wgmigrate")
       .wgmigrate()
       .appendTo("main");
   };
-  const registerSW = function() {
+  const showImport = function () {
+    app.helper
+      .getTemplate("#wgimport")
+      .wgimport()
+      .appendTo("main");
+  };
+  const showExport = function () {
+    app.helper
+      .getTemplate("#wgexport")
+      .wgexport()
+      .appendTo("main");
+  };
+  const registerSW = function () {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker
         .register("/js/sw.js", { scope: "/" })
@@ -20,8 +32,13 @@
     }
   };
 
-  $(document).ready(function() {
+  $(document).ready(function () {
     registerSW();
-    showMigrate();
+    Promise.all([app.db.init()]).then((db) => {
+      showExport();
+      showImport();
+    }).catch((dberror) => { })
+    //showMigrate();
+
   });
 })();
