@@ -1,5 +1,5 @@
 "use strict";
-$.widget("ui.wgexport", $.ui.wgbase, {
+$.widget("ba.wgexport", $.ba.wgbase, {
 
   _create: function () {
     const that = this;

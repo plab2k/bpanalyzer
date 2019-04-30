@@ -1,6 +1,6 @@
 "use strict";
-$.widget("ui.wgimport", $.ui.wgbase, {
-  _create: function() {
+$.widget("ba.wgimport", $.ba.wgbase, {
+  _create: function () {
     const that = this;
     this._on(this.element, {
       "change input": event => {
@@ -14,7 +14,7 @@ $.widget("ui.wgimport", $.ui.wgbase, {
             return app.db.putData(storeName, data);
           })
           .then(data => {
-            console.log(data);
+            that._trigger("onSuccess", null, data)
           })
           .catch(error => {
             console.log(error);

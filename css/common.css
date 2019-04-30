@@ -6,3 +6,7 @@ a:not([href]):hover {
   border-color: blue;
   color: blue;
 }
+
+svg{
+  fill:gray;
+}

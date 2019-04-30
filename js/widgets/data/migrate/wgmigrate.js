@@ -1,5 +1,5 @@
 "use strict";
-$.widget("ui.wgmigrate", $.ui.wgbase, {
+$.widget("ba.wgmigrate", $.ba.wgbase, {
   // Default options.
   options: {
     param1: "foo",

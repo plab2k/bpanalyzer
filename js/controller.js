@@ -1,25 +1,15 @@
 //Controller
 (function () {
   "use strict";
-  const showMigrate = function () {
-    app.helper
-      .getTemplate("#wgmigrate")
-      .wgmigrate()
-      .appendTo("main");
-  };
-  const showImport = function () {
-    app.helper
-      .getTemplate("#wgimport")
-      .wgimport()
-      .appendTo("main");
-  };
-  const showExport = function () {
-    app.helper
-      .getTemplate("#wgexport")
-      .wgexport()
-      .appendTo("main");
-  };
-  const registerSW = function () {
+
+  function widget(wgname, options) {
+    //define default options
+    const opt = $.extend({}, options, {})
+    /*creat a widget of the ba namespace*/
+    $.ba[wgname](opt, app.helper.getTemplate("#" + wgname).appendTo("main"));
+  }
+
+  function registerSW() {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker
         .register("/js/sw.js", { scope: "/" })
@@ -32,11 +22,21 @@
     }
   };
 
+  function refreshInfo() {
+    $(":data('ba-wginfo')").wginfo("update");
+  }
+
   $(document).ready(function () {
     registerSW();
     Promise.all([app.db.init()]).then((db) => {
-      showExport();
-      showImport();
+      widget("wgexport");
+      widget("wgimport", {
+        onSuccess: refreshInfo
+      });
+      widget("wgclear", {
+        onSuccess: refreshInfo
+      });
+      widget("wginfo");
     }).catch((dberror) => { })
     //showMigrate();
 
