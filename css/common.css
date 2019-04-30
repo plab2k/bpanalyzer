@@ -1,12 +1,20 @@
-a:not([href]) {
+a:not([href]) span {
   cursor: pointer;
   border-bottom: dotted 1px;
 }
-a:not([href]):hover {
+a:not([href]):hover span {
   border-color: blue;
   color: blue;
 }
 
-svg{
+a:not([href]):hover svg {
+  fill: blue;  
+}
+
+a svg, .iconsvg { 
+  cursor: pointer;
   fill:gray;
+  height: 1.12em;
+  width: 1.12em;
+  vertical-align: bottom;
 }

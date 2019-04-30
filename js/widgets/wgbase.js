@@ -4,14 +4,6 @@ $.widget("ba.wgbase", {
   },
   _create: function () {
     this.element.addClass("wgbase");
-    $("[data-icon]", this.element).each((i, elem) => {
-      const icon = $("<svg>")
-        .append(
-          $("<use>").attr("xlink:href", "#" + elem.getAttribute("data-icon"))
-        )
-        .appendTo($(elem))
-      //.attr("xlink:href", "#" + elem.attr("data-icon"))
-    })
     app.helper.translate(this.element);
     this._super();
   },
