@@ -3,20 +3,20 @@
   "name": "Business Process Analyzer",
   "icons": [
     {
-      "src": "/img/192.png",
+      "src": "img/192.png",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "/img/512.png",
+      "src": "img/512.png",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
-  "start_url": "/?source=pwa",
+  "start_url": "./?source=pwa",
   "background_color": "#000000",
   "display": "standalone",
-  "scope": "/",
+  "scope": "./",
   "theme_color": "#000000",
   "gcm_sender_id": "103953800507"
 }
