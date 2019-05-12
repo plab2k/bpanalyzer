@@ -37,6 +37,9 @@
         widget("wgclear", {
           onSuccess: refreshInfo
         });
+        widget("wgdemo", {
+          onSuccess: refreshInfo
+        });
         widget("wginfo");
       })
       .catch(dberror => {});

@@ -30,8 +30,10 @@ app.import = (function() {
           var currentline = lines[i].split(";");
           for (var j = 0; j < headers.length; j++) {
             let key = headers[j];
-            obj[key] = currentline[j].replace(/^"/, "").replace(/"$/, "");
-            if (!isNaN(obj[key])) obj[key] = parseFloat(obj[key]);
+            if (currentline[j]) {
+              obj[key] = currentline[j].replace(/^"/, "").replace(/"$/, "");
+              if (!isNaN(obj[key])) obj[key] = parseFloat(obj[key]);
+            }
           }
           result.push(obj);
         }
