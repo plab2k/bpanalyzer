@@ -1,5 +1,5 @@
 //Controller
-(function() {
+(function () {
   "use strict";
 
   function widget(wgname, options) {
@@ -12,7 +12,7 @@
   function registerSW() {
     if ("serviceWorker" in navigator) {
       navigator.serviceWorker
-        .register("./js/sw.js", { scope: "/" })
+        .register("./js/sw.js", { scope: "./" })
         .then(registration => {
           app.serviceWorker = registration;
         })
@@ -26,7 +26,7 @@
     $(":data('ba-wginfo')").wginfo("update");
   }
 
-  $(document).ready(function() {
+  $(document).ready(function () {
     registerSW();
     Promise.all([app.db.init()])
       .then(db => {
@@ -42,7 +42,7 @@
         });
         widget("wginfo");
       })
-      .catch(dberror => {});
+      .catch(dberror => { });
     //showMigrate();
   });
 })();

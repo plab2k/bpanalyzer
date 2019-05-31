@@ -3,7 +3,7 @@
   "name": "Business Process Analyzer",
   "icons": [
     {
-      "src": "img/192.png",
+      "src": "../../img/192.png",
       "type": "image/png",
       "sizes": "192x192"
     },

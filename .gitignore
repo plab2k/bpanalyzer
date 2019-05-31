@@ -1,4 +1,4 @@
 js/vendor/**/.git
 .vscode
 node_modules
-app/conf/*conf.js
+js/conf/*conf.js
